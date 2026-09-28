@@ -1,0 +1,14 @@
+package com.example.produtostp4.repository;
+
+import com.example.produtostp4.entity.Produto;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface ProdutoRepository extends JpaRepository<Produto, Long> {
+    List<Produto> findProdutoByDataExclusaoNull();
+    Optional<Produto> findProdutoByIdAndDataExclusaoNull(Long id);
+}
